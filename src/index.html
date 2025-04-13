@@ -2,12 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>5DUltrahang</title>
+  <title>5D Ultrahang</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+  <div class="container">
+    <mat-toolbar color="primary">
+      <span>5D Ultrahangos Rendelő</span>
+    </mat-toolbar>
+  
+    <div class="form-container">
+      <h2>Regisztráció</h2>
+      
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Teljes név</mat-label>
+          <input matInput formControlName="name" placeholder="Adja meg a nevét">
+          <mat-error *ngIf="registrationForm.get('name')?.hasError('required')">
+            A név megadása kötelező!
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Email cím</mat-label>
+          <input matInput formControlName="email" placeholder="Adja meg az email címét">
+          <mat-error *ngIf="registrationForm.get('email')?.hasError('required')">
+            Az email cím megadása kötelező!
+          </mat-error>
+          <mat-error *ngIf="registrationForm.get('email')?.hasError('email')">
+            Érvénytelen email cím!
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Ultrahang időpont</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="ultrasoundDate">
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="registrationForm.get('ultrasoundDate')?.hasError('required')">
+            Az időpont megadása kötelező!
+          </mat-error>
+        </mat-form-field>
+  
+        <button mat-raised-button color="accent" type="submit" [disabled]="registrationForm.invalid">Regisztráció</button>
+      </form>
+    </div>
+  </div>
+  
 </body>
 </html>
+
+
+

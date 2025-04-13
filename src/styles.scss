@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+.container {
+    background-color: #f0f0f0; /* világosszürke háttérszín */
+    padding: 20px;
+    font-family: 'Arial', sans-serif; /* Alapértelmezett betűtípus */
+  }
+  
+  /* Mat-toolbar háttérszín és betűtípus */
+  mat-toolbar {
+    background-color: #3f51b5; /* Kék háttérszín */
+    font-family: 'Roboto', sans-serif; /* Betűtípus a mat-toolbar-hoz */
+    color: white; /* Fehér szöveg */
+    padding: 10px;
+  }
+  
+  mat-toolbar span {
+    font-weight: bold; /* Félkövér szöveg */
+    font-size: 24px; /* Nagyobb betűméret */
+    text-align: center;
+  }
+  
+  /* A form container háttérszíne */
+  .form-container {
+    background-color: #ffffff; /* Fehér háttér */
+    border-radius: 8px; /* Lekerekített sarkok */
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Finom árnyék */
+    max-width: 500px;
+    margin: 20px auto;
+  }
+  
+  /* Form elemek betűtípusai */
+  mat-form-field {
+    font-family: 'Arial', sans-serif; /* Betűtípus a form mezőkhöz */
+    margin-bottom: 15px;
+  }
+  
+  mat-label {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  input {
+    font-size: 14px;
+  }
+  
+  /* A gomb stílusa */
+  button {
+    font-family: 'Roboto', sans-serif; /* Gomb betűtípusa */
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-transform: uppercase; /* Nagybetűs szöveg */
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #5c6bc0; /* Kék gomb hover hatás */
+    
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  mat-error {
+    font-size: 0.85em;  // Kisebb betűméret
+    font-style: italic;  // Dőlt betű
+    color: grey;  // Szürke szín
+  }
+  mat-error::after {
+    content: "\A";  // Sor törés
+    white-space: pre;  // Sor törés kezelés
+  }
